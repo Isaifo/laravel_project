@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
 Route::get('/', function () {
-    return view('home');
+  //  return view('home');
 
         $jobs = Job::all();
-        dd($jobs);
+       dd($jobs[0]->title);
 
 });
 
