@@ -40,9 +40,21 @@ Route::get('/jobs/{id}', function ($id) {
 
 
 
+ Route::post('/jobs', function ($id) {
+
+    dd('post request');
+
+ });
+
+
+
+
+
 Route::get('/contact', function () {
     return view('contact',
 
 );
 });
+
+
 return view('contact');
