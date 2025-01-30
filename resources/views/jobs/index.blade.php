@@ -17,8 +17,10 @@
             <div><strong>{{$job['title']}}</strong>, Pays: {{$job['salary']}}</div>
         </a>
 
-
 @endforeach
+
+
+
 
 <div>
     {{ $jobs->links() }}
