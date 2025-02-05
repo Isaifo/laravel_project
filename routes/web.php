@@ -56,6 +56,7 @@ Route::get('/jobs/{id}', function ($id) {
 
  });
 
+// Edit
  Route::get('/jobs/{id}/edit', function ($id) {
 
     $job = Job::find($id);
@@ -65,7 +66,17 @@ Route::get('/jobs/{id}', function ($id) {
 });
 
 
+// Update
 
+Route::patch('/jobs/{id}', function ($id) {
+
+    
+});
+
+// destroy
+Route::delete('/jobs/{id}', function ($id) {
+
+});
 
 Route::get('/contact', function () {
     return view('contact',
