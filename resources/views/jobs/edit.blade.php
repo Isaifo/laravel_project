@@ -4,7 +4,8 @@
         Edit Job: {{$job->title}}
     </x-slot:heading>
 
-<form method="POST" action="/jobs">
+<form method="POST" action="/jobs/{{ $job->id }}">
+  @method('PATCH')
 
  @csrf
 

@@ -70,12 +70,36 @@ Route::get('/jobs/{id}', function ($id) {
 
 Route::patch('/jobs/{id}', function ($id) {
 
-    
+    request()->validate([
+        'title' => 'required',
+        'salary' => 'required',
+    ]);
+    // auth (On hold ...)
+    // update
+
+    $job = Job::findOrFail($id);
+
+    $job->update([
+        'title' => request('title'),
+        'salary' => request('salary'),
+    ]);
+
+
+    // redirect
+
+    return redirect('/jobs/' . $job->id);
 });
 
-// destroy
+
 Route::delete('/jobs/{id}', function ($id) {
 
+    // auth
+    // delete the job
+
+     Job::findOrFail($id)->delete();
+   
+
+    return redirect('/jobs');
 });
 
 Route::get('/contact', function () {
